@@ -1,0 +1,25 @@
+services:
+    jupyter:
+      image: contransimage
+      volumes:
+        - ./:/contrans
+      env_file:
+        - .env
+      ports:
+        - "8895:8888"
+      networks:
+        - dbnetwork
+    postgres:
+      image: postgres:latest
+      env_file: 
+        - .env
+      volumes:
+        - postgreslab1:/var/lib/postgresql/data
+      ports:
+        - "5432:5432"
+      networks:
+        - dbnetwork
+volumes:
+  postgreslab1:
+networks:
+  dbnetwork:
