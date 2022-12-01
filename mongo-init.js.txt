@@ -1,0 +1,25 @@
+db.createUser(
+
+        {
+
+            user: "czj9zj",
+
+            pwd: "salami",
+
+            roles: [
+
+                {
+
+                    role: "readWrite",
+
+                    db: "init_db"
+
+                }
+
+            ]
+
+        }
+
+    )
+
+;
